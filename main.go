@@ -8,14 +8,12 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/go-openapi/runtime/middleware"
 	goHandlers "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/hashicorp/go-hclog"
 )
 
-func main()
-{
+func main() {
 	// initialize logger
 	l := hclog.Default()
 
@@ -25,7 +23,7 @@ func main()
 	// CORS
 	goHandlers.CORS()
 
-	// create http server 
+	// create http server
 	s := &http.Server{
 		Addr:         ":8080",
 		Handler:      sm,
